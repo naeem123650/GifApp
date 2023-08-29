@@ -1,0 +1,66 @@
+[
+  {
+    "categories": ["Funny", "Humor"],
+    "single_image_url": "https://example.com/funny_meme.jpg"
+  },
+  {
+    "categories": ["Cats", "Animals"],
+    "single_image_url": "https://example.com/cat_meme.jpg"
+  },
+  {
+    "categories": ["Dogs", "Animals"],
+    "single_image_url": "https://example.com/dog_meme.jpg"
+  },
+  {
+    "categories": ["Sarcasm", "Humor"],
+    "single_image_url": "https://example.com/sarcasm_meme.jpg"
+  },
+  {
+    "categories": ["Funny", "Humor"],
+    "single_image_url": "https://example.com/another_funny_meme.jpg"
+  },
+  {
+    "categories": ["Cats", "Animals"],
+    "single_image_url": "https://example.com/another_cat_meme.jpg"
+  },
+  {
+    "categories": ["Dogs", "Animals"],
+    "single_image_url": "https://example.com/another_dog_meme.jpg"
+  },
+  {
+    "categories": ["Sarcasm", "Humor"],
+    "single_image_url": "https://example.com/another_sarcasm_meme.jpg"
+  },
+  {
+    "categories": ["Funny", "Humor"],
+    "single_image_url": "https://example.com/yet_another_funny_meme.jpg"
+  },
+  {
+    "categories": ["Cats", "Animals"],
+    "single_image_url": "https://example.com/yet_another_cat_meme.jpg"
+  },
+  {
+    "categories": ["Dogs", "Animals"],
+    "single_image_url": "https://example.com/yet_another_dog_meme.jpg"
+  },
+  {
+    "categories": ["Sarcasm", "Humor"],
+    "single_image_url": "https://example.com/yet_another_sarcasm_meme.jpg"
+  },
+  {
+    "categories": ["Funny", "Humor"],
+    "single_image_url": "https://example.com/last_funny_meme.jpg"
+  },
+  {
+    "categories": ["Cats", "Animals"],
+    "single_image_url": "https://example.com/last_cat_meme.jpg"
+  },
+  {
+    "categories": ["Dogs", "Animals"],
+    "single_image_url": "https://example.com/last_dog_meme.jpg"
+  },
+  {
+    "categories": ["Sarcasm", "Humor"],
+    "single_image_url": "https://example.com/last_sarcasm_meme.jpg"
+  }
+]
