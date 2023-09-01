@@ -2,7 +2,7 @@
 	<nav>
 		<div class="navbar bg-black flex justify-between flex-wrap">
 			<div class="">
-				<a class="btn btn-ghost normal-case text-xl">GIF World</a>
+				<a class="btn btn-ghost normal-case text-xl">GIF Town</a>
 			</div>
 			<div>
 				<label for="toggleDeveloperMode" class="flex items-center cursor-pointer">
@@ -18,9 +18,9 @@
 			</div>
 		</div>
 	</nav>
-	<section class="bg-blue-500">
+	<section :class="[isDevMode ? 'bg-gray-800' : 'bg-blue-500']">
 		<div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:px-12">
-			<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">GIF World</h1>
+			<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl" :class="[isDevMode ? 'text-white' : 'text-gray-900']">GIF Town</h1>
 			<p class="mb-8 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48 ">GIF Place for the
 			<span class="font-mono">&lt;Developers /&gt;</span></p>
 			<div>
@@ -32,7 +32,7 @@
 				<div class="p-2 m-1 text-left text-black font-semibold hover:bg-gray-300 rounded border cursor-pointer capitalize" v-for="(filter_category,index) in filteredCategory" :key="index" @click="findCategoryWise(filter_category.id,filter_category.name)"># {{ filter_category.name }}</div>
 			</div>
 		</div>
-		<div class="mx-auto max-w-screen-xl p-4 border-2 border-white rounded bg-blue-400">
+		<div class="mx-auto max-w-screen-xl p-4 border-2 border-white rounded " :class="[isDevMode ? 'bg-gray-400' : 'bg-blue-400']">
 			<strong class="text-black text-xl">Popular Tags:</strong>
 			<div class="flex flex-wrap my-2">
 				<template v-for="popular in popularCategories" :key="popular.id"> 
@@ -96,76 +96,6 @@ export default {
 			}
 		},
 		async getAllImages() {
-			// await $supabase
-			// 	.from('images')
-			// 	.insert([
-			// 		{ name:"gif_172.gif", status:true,category_id:[30]},
-			// 		{ name:"gif_173.gif", status:true,category_id:[30]},
-			// 		{ name:"gif_174.gif", status:true,category_id:[30]},
-			// 		{ name:"gif_175.gif", status:true,category_id:[30]},
-			// 		{ name:"gif_176.gif", status:true,category_id:[30]},
-			// 		{ name:"gif_177.gif", status:true,category_id:[30]},
-			// 		{ name:"gif_178.gif", status:true,category_id:[30]},
-			// 		{ name:"gif_179.gif", status:true,category_id:[30]},
-			// 		{ name:"gif_180.gif", status:true,category_id:[30]},
-
-			// 		{ name:"gif_181.gif", status:true,category_id:[31]},
-			// 		{ name:"gif_182.gif", status:true,category_id:[31]},
-			// 		{ name:"gif_183.gif", status:true,category_id:[31]},
-			// 		{ name:"gif_184.gif", status:true,category_id:[31]},
-			// 		{ name:"gif_185.gif", status:true,category_id:[31]},
-			// 		{ name:"gif_186.gif", status:true,category_id:[31]},
-
-			// 		{ name:"gif_187.gif", status:true,category_id:[32]},
-			// 		{ name:"gif_188.gif", status:true,category_id:[32]},
-			// 		{ name:"gif_189.gif", status:true,category_id:[32]},
-			// 		{ name:"gif_190.gif", status:true,category_id:[32]},
-			// 		{ name:"gif_191.gif", status:true,category_id:[32]},
-			// 		{ name:"gif_192.gif", status:true,category_id:[32]},
-
-			// 		{ name:"gif_193.gif", status:true,category_id:[33]},
-			// 		{ name:"gif_194.gif", status:true,category_id:[33]},
-			// 		{ name:"gif_195.gif", status:true,category_id:[33]},
-			// 		{ name:"gif_196.gif", status:true,category_id:[33]},
-			// 		{ name:"gif_197.gif", status:true,category_id:[33]},
-			// 		{ name:"gif_198.gif", status:true,category_id:[33]},
-			// 		{ name:"gif_199.gif", status:true,category_id:[33]},
-
-			// 		{ name:"gif_200.gif", status:true,category_id:[27]},
-			// 		{ name:"gif_201.gif", status:true,category_id:[27]},
-			// 		{ name:"gif_202.gif", status:true,category_id:[27]},
-			// 		{ name:"gif_203.gif", status:true,category_id:[27]},
-			// 		{ name:"gif_204.gif", status:true,category_id:[27]},
-			// 		{ name:"gif_205.gif", status:true,category_id:[27]},
-			// 		{ name:"gif_206.gif", status:true,category_id:[27]},
-
-			// 		{ name:"gif_207.gif", status:true,category_id:[28]},
-			// 		{ name:"gif_208.gif", status:true,category_id:[28]},
-			// 		{ name:"gif_209.gif", status:true,category_id:[28]},
-			// 		{ name:"gif_210.gif", status:true,category_id:[28]},
-			// 		{ name:"gif_211.gif", status:true,category_id:[28]},
-			// 		{ name:"gif_212.gif", status:true,category_id:[28]},
-
-			// 		{ name:"gif_213.gif", status:true,category_id:[29]},
-			// 		{ name:"gif_214.gif", status:true,category_id:[29]},
-			// 		{ name:"gif_215.gif", status:true,category_id:[29]},
-			// 		{ name:"gif_216.gif", status:true,category_id:[29]},
-			// 		{ name:"gif_217.gif", status:true,category_id:[29]},
-			// 		{ name:"gif_218.gif", status:true,category_id:[29]},
-			// 		{ name:"gif_219.gif", status:true,category_id:[29]},		
-			// 	])
-			// 	.select()
-
-
-
-			// const images = await $supabase.storage
-			// .from('GIF_IMAGES')
-			// .list();
-
-			// if (images?.data?.length > 0) {
-			// 	var { data, error } = images;
-			// 	console.log({data});
-			// }
 			this.isLoading=true;
 			const images = await $supabase.from("images")
 				.select(`id,name,category_id`)
